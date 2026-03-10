@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Frosted Lane Custom Colors */
+  --color-frost-50: #eff8ff;
+  --color-frost-100: #dbeffe;
+  --color-frost-200: #bfe3fe;
+  --color-frost-300: #93d2fd;
+  --color-frost-400: #60b8fa;
+  --color-frost-500: #3b99f6;
+  --color-frost-600: #257ceb;
+  --color-frost-700: #1d65d8;
+  --color-frost-800: #1e52af;
+  --color-frost-900: #1e478a;
+  --color-frost-950: #172c54;
+
+  --color-ice-50: #f0fdfa;
+  --color-ice-100: #ccfbf1;
+  --color-ice-200: #99f6e4;
+  --color-ice-300: #5eead4;
+  --color-ice-400: #2dd4bf;
+  --color-ice-500: #14b8a6;
+  --color-ice-600: #0d9488;
+  --color-ice-700: #0f766e;
+
+  --color-snow-50: #f8fafc;
+  --color-snow-100: #f1f5f9;
+  --color-snow-200: #e2e8f0;
+  --color-snow-300: #cbd5e1;
+  --color-snow-400: #94a3b8;
+  --color-snow-500: #64748b;
+
+  --color-berry: #e11d74;
+  --color-vanilla: #fef3c7;
+  --color-chocolate: #78350f;
+  --color-mint: #6ee7b7;
+}
+
+:root {
+  --background: #f0f7ff;
+  --foreground: #1a1a2e;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f0f7ff;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #93d2fd, #3b99f6);
+  border-radius: 4px;
+}
+
+/* Glassmorphism utility class */
+.glass {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.glass-dark {
+  background: rgba(23, 44, 84, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Snow particle animation */
+@keyframes snowfall {
+  0% { transform: translateY(-10vh) translateX(0); opacity: 1; }
+  100% { transform: translateY(110vh) translateX(100px); opacity: 0.3; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(59, 153, 246, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(59, 153, 246, 0.6); }
+}
+
+.animate-snowfall {
+  animation: snowfall linear infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #3b99f6, #14b8a6, #e11d74);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hero gradient bg */
+.hero-gradient {
+  background: linear-gradient(135deg, #172c54 0%, #1e478a 25%, #257ceb 50%, #60b8fa 75%, #bfe3fe 100%);
+}
+
+/* Frost gradient */
+.frost-gradient {
+  background: linear-gradient(135deg, #eff8ff 0%, #dbeffe 50%, #f0fdfa 100%);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
+}
